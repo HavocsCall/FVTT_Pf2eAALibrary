@@ -1,0 +1,14 @@
+{
+  "id": "FVTT_Pf2eAALibrary",
+  "title": "PF2e AA: Library",
+  "description": "Shared code and user-interface support for the PF2e Accursed Ancestries modules.",
+  "version": "0.1.0",
+  "authors": [{ "name": "HavocsCall", "url": "https://github.com/HavocsCall", "discord": "HavocsCall", "flags": {} }],
+  "compatibility": { "minimum": "13", "verified": "14" },
+  "relationships": {
+    "systems": [{ "id": "pf2e", "type": "system", "compatibility": { "minimum": "7.5" } }]
+  },
+  "languages": [{ "lang": "en", "name": "English", "path": "lang/en.json", "flags": {} }],
+  "esmodules": ["src/scripts/library.js"],
+  "styles": ["src/styles/accursed-meter.css"]
+}

@@ -1,0 +1,15 @@
+{
+  "FVTT_PF2EAALIBRARY": {
+    "NAME": "PF2e AA Library",
+    "SETTINGS": {
+      "FORMERANCESTRYMODE": {
+        "NAME": "Former Ancestry: Use expanded sync",
+        "HINT": "Applies the selected former ancestry's chassis details to registered accursed ancestries."
+      },
+      "METERPANEL": {
+        "NAME": "Accursed Meter: Show character sheet panel",
+        "HINT": "Displays the ancestry-appropriate meter on supported character sheets."
+      }
+    }
+  }
+}
