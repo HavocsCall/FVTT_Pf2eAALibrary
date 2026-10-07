@@ -21,8 +21,11 @@
 
     ### Security
     - Security-related fixes
+
 </details>
 
-## 0.1.0 - 
+## 0.1.0 -
+
 ### Added
+
 - Initial build for Accursed Ancestry library

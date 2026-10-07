@@ -3,20 +3,20 @@
 # See the above link for the reason why "directory" is set to "/"
 version: 2
 updates:
-  # GitHub Actions
-  - package-ecosystem: "github-actions"
-    open-pull-requests-limit: 10
-    directory: "/"
-    schedule:
-      interval: "daily"
+    # GitHub Actions
+    - package-ecosystem: "github-actions"
+      open-pull-requests-limit: 10
+      directory: "/"
+      schedule:
+          interval: "daily"
 
-  # npm dependencies
-  - package-ecosystem: "npm"
-    directory: "/"
-    open-pull-requests-limit: 5
-    schedule:
-      interval: "weekly"
-    groups:
-      npm-dependencies:
-        patterns:
-          - "*"
+    # npm dependencies
+    - package-ecosystem: "npm"
+      directory: "/"
+      open-pull-requests-limit: 5
+      schedule:
+          interval: "weekly"
+      groups:
+          npm-dependencies:
+              patterns:
+                  - "*"

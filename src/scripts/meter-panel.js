@@ -26,14 +26,22 @@ function createPanel(actor, meter, state) {
 	const dots = Array.from({ length: state.max }, (_, index) => {
 		const value = index + 1;
 		const active = value <= state.current ? " fvtt-aa-meter-panel__dot--active" : "";
-		const severity = state.thresholds ? ` fvtt-aa-meter-panel__dot--${getDotSeverity(value, state.thresholds)}` : "";
+		const severity = state.thresholds
+			? ` fvtt-aa-meter-panel__dot--${getDotSeverity(value, state.thresholds)}`
+			: "";
 		return `<i class="fa-${value <= state.current ? "solid" : "regular"} fa-circle fvtt-aa-meter-panel__dot${active}${severity}"></i>`;
 	}).join("");
 	panel.innerHTML = `<a class="condition-pips fvtt-aa-meter-panel__track${actor.isOwner ? " fvtt-aa-meter-panel__track--editable" : ""}" data-action="adjust-meter"><span class="sidebar_label">${game.i18n.localize(meter.label)}</span><span class="pips fvtt-aa-meter-panel__meter">${dots || `<span class="fvtt-aa-meter-panel__empty">${game.i18n.localize(meter.empty)}</span>`}</span></a>`;
 	if (!actor.isOwner) return panel;
 	const track = panel.querySelector("[data-action='adjust-meter']");
-	track?.addEventListener("click", async (event) => { event.preventDefault(); await adjustMeterCurrent(actor, meter, 1); });
-	track?.addEventListener("contextmenu", async (event) => { event.preventDefault(); await adjustMeterCurrent(actor, meter, -1); });
+	track?.addEventListener("click", async (event) => {
+		event.preventDefault();
+		await adjustMeterCurrent(actor, meter, 1);
+	});
+	track?.addEventListener("contextmenu", async (event) => {
+		event.preventDefault();
+		await adjustMeterCurrent(actor, meter, -1);
+	});
 	return panel;
 }
 

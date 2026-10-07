@@ -1,9 +1,4 @@
-import {
-	APPLIED_FLAG,
-	BASELINE_FIELDS,
-	BASELINE_FLAG,
-	FORMER_ANCESTRY_PATH,
-} from "./former-ancestry-constants.js";
+import { APPLIED_FLAG, BASELINE_FIELDS, BASELINE_FLAG, FORMER_ANCESTRY_PATH } from "./former-ancestry-constants.js";
 import { getAncestryProfile } from "./ancestry-registry.js";
 import { MODULE_ID } from "./module-constants.js";
 import { resolveAncestryBySlug } from "./former-ancestry-resolver.js";

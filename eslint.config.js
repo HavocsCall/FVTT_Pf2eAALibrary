@@ -9,8 +9,7 @@ export default [
 	{
 		files: ["**/*.{js,mjs}"],
 		rules: {
-			"indent": ["error", "tab", { "SwitchCase": 1 }],
-			"no-unused-vars": ["error", { "argsIgnorePattern": "^_", "caughtErrorsIgnorePattern": "^_" }],
+			"no-unused-vars": ["error", { argsIgnorePattern: "^_", caughtErrorsIgnorePattern: "^_" }],
 		},
 	},
 	{
@@ -25,6 +24,12 @@ export default [
 				game: "readonly",
 				ui: "readonly",
 			},
+		},
+	},
+	{
+		files: ["build/**/*.mjs"],
+		languageOptions: {
+			globals: globals.node,
 		},
 	},
 ];

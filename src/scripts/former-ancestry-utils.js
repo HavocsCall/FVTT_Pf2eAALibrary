@@ -19,8 +19,8 @@ export function buildFormerAncestryUpdate(baseline, formerAncestry) {
 		source.additionalLanguages,
 	);
 	const mergedItems = {
-		...(foundry.utils.deepClone(source.items ?? {})),
-		...(foundry.utils.deepClone(baseline.items ?? {})),
+		...foundry.utils.deepClone(source.items ?? {}),
+		...foundry.utils.deepClone(baseline.items ?? {}),
 	};
 
 	return {
@@ -41,25 +41,15 @@ export function buildFormerAncestryUpdate(baseline, formerAncestry) {
 
 function mergeTraits(accursedTraits = {}, formerTraits = {}, formerSlug) {
 	return {
-		otherTags: unique([
-			...(accursedTraits.otherTags ?? []),
-			...(formerTraits.otherTags ?? []),
-		]),
-		value: unique([
-			...(accursedTraits.value ?? []),
-			...(formerTraits.value ?? []),
-			formerSlug,
-		].filter(Boolean)),
+		otherTags: unique([...(accursedTraits.otherTags ?? []), ...(formerTraits.otherTags ?? [])]),
+		value: unique([...(accursedTraits.value ?? []), ...(formerTraits.value ?? []), formerSlug].filter(Boolean)),
 		rarity: accursedTraits.rarity ?? formerTraits.rarity ?? "common",
 	};
 }
 
 function mergeLanguages(accursedLanguages = {}, formerLanguages = {}) {
 	return {
-		value: unique([
-			...(formerLanguages.value ?? []),
-			...(accursedLanguages.value ?? []),
-		]),
+		value: unique([...(formerLanguages.value ?? []), ...(accursedLanguages.value ?? [])]),
 		custom: uniqueText([formerLanguages.custom, accursedLanguages.custom]),
 	};
 }
@@ -67,10 +57,7 @@ function mergeLanguages(accursedLanguages = {}, formerLanguages = {}) {
 function mergeAdditionalLanguages(accursedAdditional = {}, formerAdditional = {}) {
 	return {
 		count: Math.max(formerAdditional.count ?? 0, accursedAdditional.count ?? 0),
-		value: unique([
-			...(formerAdditional.value ?? []),
-			...(accursedAdditional.value ?? []),
-		]),
+		value: unique([...(formerAdditional.value ?? []), ...(accursedAdditional.value ?? [])]),
 		custom: uniqueText([formerAdditional.custom, accursedAdditional.custom]),
 	};
 }

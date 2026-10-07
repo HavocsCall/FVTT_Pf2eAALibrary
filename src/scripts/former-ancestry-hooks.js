@@ -1,4 +1,10 @@
-import { didFormerAncestryChange, isAccursedAncestry, isFormerAncestrySyncEnabled, reconcileFormerAncestryMode, syncAccursedAncestry } from "./former-ancestry-sync.js";
+import {
+	didFormerAncestryChange,
+	isAccursedAncestry,
+	isFormerAncestrySyncEnabled,
+	reconcileFormerAncestryMode,
+	syncAccursedAncestry,
+} from "./former-ancestry-sync.js";
 
 export function registerHooks() {
 	Hooks.once("ready", () => {

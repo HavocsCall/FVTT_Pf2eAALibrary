@@ -1,6 +1,7 @@
 # AGENTS.md
 
 ## General Agent behavior
+
 - Do not make any direct changes unless asked to
 - Explain the reasoning behind your suggestions
 - Do not assume anything
@@ -18,8 +19,9 @@
 - Update README.md when applicable
 
 ## Project Context
-- Mod name: `FVTT_PF2eAALibrary`
-- Display Name: `PF2e AA: Library`
+
+- Mod name: `FVTT_Pf2eAALibrary`
+- Display Name: `PF2e AA Library`
 - Platform: `FoundryVTT version 14`
 - Platform Documentation: `https://foundryvtt.com/api/`
 - FoundryVTT System: `Pathfinder 2nd Edition`

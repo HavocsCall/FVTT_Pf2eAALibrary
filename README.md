@@ -2,10 +2,14 @@
 
 Shared runtime support for the PF2e Accursed Ancestries modules.
 
-This module provides the ancestry profile registry, former-ancestry synchronization, and generic character-sheet meter. It contains no ancestry compendium content or user-configurable settings; each ancestry module owns its settings and supplies enablement callbacks to the Library. It is intended to be installed as a required dependency of ancestry modules such as `PF2e AA: Vampire` and `PF2e AA: Lycanthrope`.
-
 ## Development
 
 - `npm install` installs development dependencies.
 - `npm run lint` checks the JavaScript source with ESLint.
 - `npm run lint:fix` applies safe automatic ESLint fixes.
+- `npm run format` formats maintained source files with Prettier.
+- `npm run format:check` checks formatting without changing files.
+- `npm run check` checks both formatting and lint rules.
+- `npm run fix` formats files and applies safe ESLint fixes.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the version policy and release commands.

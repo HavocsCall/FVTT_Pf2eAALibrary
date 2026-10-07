@@ -1,17 +1,29 @@
 {
-  "name": "fvtt_pf2eaalibrary",
-  "private": true,
-  "type": "module",
-  "engines": {
-    "node": ">=20.19"
-  },
-  "scripts": {
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
-  },
-  "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "eslint": "^10.12.0",
-    "globals": "^17.13.0"
-  }
+	"name": "fvtt_pf2eaalibrary",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"engines": {
+		"node": ">=20.19"
+	},
+	"scripts": {
+		"check": "npm run format:check && npm run lint",
+		"fix": "npm run format && npm run lint:fix",
+		"format": "prettier . --write",
+		"format:check": "prettier . --check",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
+		"postversion": "npm run check",
+		"release:major": "npm version major --no-git-tag-version",
+		"release:minor": "npm version minor --no-git-tag-version",
+		"release:patch": "npm version patch --no-git-tag-version",
+		"version": "npm run version:sync",
+		"version:sync": "node build/Sync-Version.mjs"
+	},
+	"devDependencies": {
+		"@eslint/js": "^10.0.1",
+		"eslint": "^10.12.0",
+		"globals": "^17.13.0",
+		"prettier": "^3.9.9"
+	}
 }
