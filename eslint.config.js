@@ -19,6 +19,7 @@ export default [
 			sourceType: "module",
 			globals: {
 				...globals.browser,
+				CONFIG: "readonly",
 				Hooks: "readonly",
 				foundry: "readonly",
 				game: "readonly",

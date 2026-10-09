@@ -16,6 +16,18 @@ export function getAncestryProfile(item) {
 	return profiles.get(item.system?.slug) ?? null;
 }
 
+export function getAncestryProfileBySlug(slug) {
+	return profiles.get(slug) ?? null;
+}
+
+export function getAncestryProfiles() {
+	return profiles.values();
+}
+
+export function isRegisteredAncestrySlug(slug) {
+	return profiles.has(slug);
+}
+
 export function getActorAccursedAncestry(actor) {
 	if (actor?.type !== "character") return null;
 	const item = actor.items.find((candidate) => getAncestryProfile(candidate));
